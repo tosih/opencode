@@ -20,6 +20,7 @@ Use these specialized agents by mentioning them with `@`:
 | `@librarian` | External research - official docs (Context7), GitHub code (grep.app), web search (Exa) | Claude Sonnet 4.5 |
 | `@principal` | Principal engineering advisor - complex architecture, hard debugging, design review | Claude Opus 4.5 |
 | `@frontend` | UI/UX implementation - clean, modern design, Nuxt.js, Vercel-style aesthetics | Gemini 3 Pro |
+| `@tui` | TUI/CLI design - terminal interfaces with Charm (Bubble Tea, Lip Gloss, Huh), Vercel/OpenCode aesthetics, k9s-inspired UX patterns | Claude Sonnet 4.5 |
 | `@docs` | Technical writing - README, API docs, architecture docs, guides | Gemini 3 Pro |
 | `@multimodal` | Media analysis - PDFs, images, diagrams, screenshots | Claude Sonnet 4.5 |
 | `@quick` | Fast execution - simple tasks, file moves, grep-and-replace, boilerplate | Claude Haiku 4.5 |
@@ -61,12 +62,12 @@ Use these specialized agents by mentioning them with `@`:
 
 | Command | Description | Agents Used |
 |---------|-------------|-------------|
-| `/ultrawork <task>` | Maximum performance mode - parallel agent swarms, systematic TODO tracking | `explore`, `librarian`, `go`, `typescript`, `frontend`, `k8s`, `terraform`, `cicd`, `postgres`, `linux`, `perf`, `sre`, `security`, `architect`, `principal`, `docs`, `testing` |
+| `/ultrawork <task>` | Maximum performance mode - parallel agent swarms, systematic TODO tracking | `explore`, `librarian`, `go`, `typescript`, `frontend`, `tui`, `k8s`, `terraform`, `cicd`, `postgres`, `linux`, `perf`, `sre`, `security`, `architect`, `principal`, `docs`, `testing` |
 | `/search <query>` | Deep search across codebase (explore swarm) and external sources (librarian) | `explore`, `librarian` |
 | `/analyze <topic>` | Multi-phase deep analysis with expert consultation | `explore`, `librarian`, `architect`, `security`, `sre`, `perf`, `principal` |
 | `/think <problem>` | Extended reasoning mode for complex problems | `explore`, `librarian` |
 | `/review <code>` | Comprehensive code review with security, performance, and maintainability focus | `explore`, `principal`, `security`, `sre`, `perf`, `architect`, `testing` |
-| `/implement <task>` | End-to-end feature implementation with parallel agent orchestration | `explore`, `librarian`, `architect`, `principal`, `go`, `typescript`, `postgres`, `frontend`, `k8s`, `terraform`, `cicd`, `linux`, `testing`, `security`, `sre`, `perf` |
+| `/implement <task>` | End-to-end feature implementation with parallel agent orchestration | `explore`, `librarian`, `architect`, `principal`, `go`, `typescript`, `postgres`, `frontend`, `tui`, `k8s`, `terraform`, `cicd`, `linux`, `testing`, `security`, `sre`, `perf` |
 
 ## Plugins
 
@@ -174,6 +175,7 @@ background_cancel(all=true)
 | SLO/SLI design | `@sre` |
 | Test strategy | `@testing` |
 | UI/UX styling | `@frontend` |
+| TUI/CLI interfaces | `@tui` |
 | Documentation | `@docs` |
 | Shell scripts | `@linux` |
 | Simple refactors | `@quick` |
