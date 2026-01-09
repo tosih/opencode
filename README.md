@@ -1,6 +1,6 @@
 # opencode
 
-burdz [OpenCode](https://opencode.ai) configuration with specialized AI agents for software engineering tasks
+Sohail Ahmed's [OpenCode](https://opencode.ai) configuration with specialized AI agents for software engineering tasks
 
 ## Features
 
@@ -16,7 +16,8 @@ See [AGENTS.md](AGENTS.md) for the full list of available agents, commands and c
 
 ## Credits
 
-Inspired by [oh-my-opencode](https://github.com/code-yeongyu/oh-my-opencode)
+- Inspired by [oh-my-opencode](https://github.com/code-yeongyu/oh-my-opencode)
+- Thanks to Matt Burdan ([@burdzwastaken](https://github.com/burdzwastaken)) for contributions and feedback
 
 ## License
 

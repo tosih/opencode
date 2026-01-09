@@ -1,6 +1,6 @@
 # OpenCode Configuration
 
-Personal OpenCode configuration for Matt Burdan (@burdzwastaken).
+Personal OpenCode configuration for Sohail Ahmed.
 
 ## Available Agents
 
@@ -10,7 +10,7 @@ Use these specialized agents by mentioning them with `@`:
 
 | Agent | Purpose | Model |
 |-------|---------|-------|
-| `@metaburdz` | Primary orchestrator - architecture, debugging, code review, parallel agent swarms, delegation | Claude Opus 4.5 |
+| `@metasohail` | Primary orchestrator - architecture, debugging, code review, parallel agent swarms, delegation | Claude Opus 4.5 |
 
 ### Core Agents
 
@@ -19,7 +19,7 @@ Use these specialized agents by mentioning them with `@`:
 | `@explore` | Fast codebase search - find files, patterns, structures (contextual grep) | Claude Haiku 4.5 |
 | `@librarian` | External research - official docs (Context7), GitHub code (grep.app), web search (Exa) | Claude Sonnet 4.5 |
 | `@principal` | Principal engineering advisor - complex architecture, hard debugging, design review | Claude Opus 4.5 |
-| `@frontend` | UI/UX implementation - styling, layout, animation, visual design | Gemini 3 Pro |
+| `@frontend` | UI/UX implementation - clean, modern design, Nuxt.js, Vercel-style aesthetics | Gemini 3 Pro |
 | `@docs` | Technical writing - README, API docs, architecture docs, guides | Gemini 3 Pro |
 | `@multimodal` | Media analysis - PDFs, images, diagrams, screenshots | Claude Sonnet 4.5 |
 | `@quick` | Fast execution - simple tasks, file moves, grep-and-replace, boilerplate | Claude Haiku 4.5 |
@@ -29,7 +29,7 @@ Use these specialized agents by mentioning them with `@`:
 | Agent | Purpose | Model |
 |-------|---------|-------|
 | `@go` | Go engineer - net/http, Cobra, sqlc, gRPC, controller-runtime, table-driven tests | Claude Sonnet 4.5 |
-| `@zig` | Zig systems programmer - comptime, allocators, eBPF/XDP, C FFI | Claude Sonnet 4.5 |
+| `@typescript` | TypeScript engineer - type-safe development, generics, strict mode, tsconfig | Claude Sonnet 4.5 |
 
 ### Infrastructure & Platform
 
@@ -38,7 +38,6 @@ Use these specialized agents by mentioning them with `@`:
 | `@k8s` | Kubernetes platform engineer - operators, CRDs, Helm, GKE/EKS, controller-runtime | Claude Sonnet 4.5 |
 | `@sre` | Site Reliability Engineer - SLOs, error budgets, incidents, observability, capacity | Claude Opus 4.5 |
 | `@terraform` | IaC expert - Terraform modules, state management, AWS/GCP, GitOps | Claude Sonnet 4.5 |
-| `@nix` | NixOS/Nix expert - flakes, Home Manager, derivations, overlays | Claude Sonnet 4.5 |
 | `@linux` | Linux/Bash/Git wizard - shell scripts, systemd, Docker, advanced Git (bisect, rebase, reflog) | Claude Sonnet 4.5 |
 | `@cicd` | CI/CD engineer - GitHub Actions, GitLab CI, ArgoCD, Tekton, Codefresh | Claude Sonnet 4.5 |
 
@@ -61,12 +60,12 @@ Use these specialized agents by mentioning them with `@`:
 
 | Command | Description | Agents Used |
 |---------|-------------|-------------|
-| `/ultrawork <task>` | Maximum performance mode - parallel agent swarms, aggressive TODO tracking | `explore`, `librarian`, `go`, `zig`, `frontend`, `k8s`, `terraform`, `cicd`, `postgres`, `linux`, `nix`, `perf`, `sre`, `security`, `architect`, `principal`, `docs`, `testing` |
+| `/ultrawork <task>` | Maximum performance mode - parallel agent swarms, systematic TODO tracking | `explore`, `librarian`, `go`, `typescript`, `frontend`, `k8s`, `terraform`, `cicd`, `postgres`, `linux`, `perf`, `sre`, `security`, `architect`, `principal`, `docs`, `testing` |
 | `/search <query>` | Deep search across codebase (explore swarm) and external sources (librarian) | `explore`, `librarian` |
 | `/analyze <topic>` | Multi-phase deep analysis with expert consultation | `explore`, `librarian`, `architect`, `security`, `sre`, `perf`, `principal` |
 | `/think <problem>` | Extended reasoning mode for complex problems | `explore`, `librarian` |
 | `/review <code>` | Comprehensive code review with security, performance, and maintainability focus | `explore`, `principal`, `security`, `sre`, `perf`, `architect`, `testing` |
-| `/implement <task>` | End-to-end feature implementation with parallel agent orchestration | `explore`, `librarian`, `architect`, `principal`, `go`, `zig`, `postgres`, `frontend`, `k8s`, `terraform`, `cicd`, `linux`, `nix`, `testing`, `security`, `sre`, `perf` |
+| `/implement <task>` | End-to-end feature implementation with parallel agent orchestration | `explore`, `librarian`, `architect`, `principal`, `go`, `typescript`, `postgres`, `frontend`, `k8s`, `terraform`, `cicd`, `linux`, `testing`, `security`, `sre`, `perf` |
 
 ## Plugins
 
@@ -98,7 +97,7 @@ The following external tools are available:
 |------|--------|------|-------------|
 | **Free** | Direct tools (`glob`, `grep`, `lsp_*`, `ast_grep`) | Free | Known scope, single patterns |
 | **Cheap** | `@explore`, `@quick` | Low | Codebase search, simple tasks |
-| **Medium** | `@librarian`, domain specialists | Medium | Research, implementation |
+| **Medium** | `@librarian`, `@typescript`, `@go`, `@frontend`, etc. | Medium | Research, implementation |
 | **Expensive** | `@principal`, `@security`, `@sre`, `@architect` | High | Architecture, security, hard debugging |
 
 ### Background vs Foreground
@@ -137,7 +136,7 @@ background_cancel(all=true)
 1. **Start complex tasks with `/ultrawork`** - enables parallel agent swarms
 2. **Use `@explore` for internal search** - it's contextual grep for your codebase
 3. **Use `@librarian` for external research** - docs, GitHub examples, best practices
-4. **Use `@metaburdz` for debugging** - orchestrates the right specialists
+4. **Use `@metasohail` for debugging** - orchestrates the right specialists
 5. **Use `@principal` sparingly** - expensive but high-quality for hard problems
 6. **Fire explore/librarian in parallel** - they're cheap and fast
 7. **Complete all TODOs** - never stop until the task is fully done
@@ -162,7 +161,7 @@ background_cancel(all=true)
 | Find code in our codebase | `@explore` |
 | Find examples in OSS | `@librarian` |
 | Write Go code | `@go` |
-| Write Zig code | `@zig` |
+| Write TypeScript code | `@typescript` |
 | Design a system | `@architect` |
 | Review architecture | `@principal` |
 | Kubernetes manifests | `@k8s` |
@@ -175,7 +174,6 @@ background_cancel(all=true)
 | Test strategy | `@testing` |
 | UI/UX styling | `@frontend` |
 | Documentation | `@docs` |
-| NixOS config | `@nix` |
 | Shell scripts | `@linux` |
 | Simple refactors | `@quick` |
 | Analyze images/PDFs | `@multimodal` |
