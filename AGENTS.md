@@ -36,6 +36,7 @@ Use these specialized agents by mentioning them with `@`:
 | Agent | Purpose | Model |
 |-------|---------|-------|
 | `@k8s` | Kubernetes platform engineer - operators, CRDs, Helm, GKE/EKS, controller-runtime | Claude Sonnet 4.5 |
+| `@homelab` | Homelab Kubernetes specialist - Talos Linux, Flux GitOps, makejinja templates, Rook-Ceph, Cilium Gateway API. SAFETY FIRST: requires approval for destructive operations, incremental changes only | Claude Sonnet 4.5 |
 | `@sre` | Site Reliability Engineer - SLOs, error budgets, incidents, observability, capacity | Claude Opus 4.5 |
 | `@terraform` | IaC expert - Terraform modules, state management, AWS/GCP, GitOps | Claude Sonnet 4.5 |
 | `@linux` | Linux/Bash/Git wizard - shell scripts, systemd, Docker, advanced Git (bisect, rebase, reflog) | Claude Sonnet 4.5 |
