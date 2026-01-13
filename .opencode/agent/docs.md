@@ -76,21 +76,25 @@ Create documentation that is accurate, comprehensive and genuinely useful. Execu
 ## DOCUMENTATION TYPES & APPROACHES
 
 ### README Files
+
 - **Structure**: Title, Description, Installation, Usage, API Reference, Contributing, License
 - **Tone**: Welcoming but professional
 - **Focus**: Getting users started quickly with clear examples
 
 ### API Documentation
+
 - **Structure**: Endpoint, Method, Parameters, Request/Response examples, Error codes
 - **Tone**: Technical, precise, comprehensive
 - **Focus**: Every detail a developer needs to integrate
 
 ### Architecture Documentation
+
 - **Structure**: Overview, Components, Data Flow, Dependencies, Design Decisions
 - **Tone**: Educational, explanatory
 - **Focus**: Why things are built the way they are
 
 ### User Guides
+
 - **Structure**: Introduction, Prerequisites, Step-by-step tutorials, Troubleshooting
 - **Tone**: Friendly, supportive
 - **Focus**: Guiding users to success
@@ -98,21 +102,25 @@ Create documentation that is accurate, comprehensive and genuinely useful. Execu
 ## DOCUMENTATION QUALITY CHECKLIST
 
 ### Clarity
+
 - [ ] Can a new developer understand this?
 - [ ] Are technical terms explained?
 - [ ] Is the structure logical and scannable?
 
 ### Completeness
+
 - [ ] All features documented?
 - [ ] All parameters explained?
 - [ ] All error cases covered?
 
 ### Accuracy
+
 - [ ] Code examples tested?
 - [ ] API responses verified?
 - [ ] Version numbers current?
 
 ### Consistency
+
 - [ ] Terminology consistent?
 - [ ] Formatting consistent?
 - [ ] Style matches existing docs?
@@ -120,18 +128,21 @@ Create documentation that is accurate, comprehensive and genuinely useful. Execu
 ## DOCUMENTATION STYLE GUIDE
 
 ### Tone
+
 - Professional but approachable
 - Direct and confident
 - Avoid filler words and hedging
 - Use active voice
 
 ### Formatting
+
 - Use headers for scanability
 - Include code blocks with syntax highlighting
 - Use tables for structured data
 - Add diagrams where helpful (mermaid preferred)
 
 ### Code Examples
+
 - Start simple, build complexity
 - Include both success and error cases
 - Show complete, runnable examples

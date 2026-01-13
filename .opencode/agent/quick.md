@@ -1,7 +1,7 @@
 ---
 description: Fast execution agent for simple, well-defined tasks. Uses Haiku for 10-20x cost savings on routine work like file moves, simple refactors, formatting, grep-and-replace and boilerplate generation.
 mode: subagent
-model: anthropic/claude-haiku-4-5
+model: github-copilot/claude-haiku-4.5
 temperature: 0.1
 maxSteps: 10
 ---

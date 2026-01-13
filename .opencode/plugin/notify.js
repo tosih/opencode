@@ -13,35 +13,35 @@ export const Notify = async ({ project, client, $ }) => {
   };
 
   const messages = [
-    "yo burdz, your turn",
-    "burdz... burdz... BURDZ!",
-    "awaiting burdz input...",
-    "burdz i'm bored",
-    "task complete. burdz pls respond",
-    "burdz wake up",
-    "i did my part, now you do yours burdz",
-    "burdz the ball is in your court",
-    "*taps mic* burdz you there?",
-    "finished. burdz come back"
+    "Sohail, your input is needed",
+    "Task complete. Awaiting your response",
+    "Waiting for input, Sohail",
+    "Session idle. Ready for next instruction",
+    "Finished. Awaiting your command",
+    "Ready for your next task, Sohail",
+    "Task complete. Your turn",
+    "Awaiting further instructions",
+    "Work completed. Standing by",
+    "Ready when you are, Sohail"
   ];
 
   const permissionMessages = [
-    "burdz! need your approval here",
-    "permission check, burdz",
-    "yo burdz, approve this or nah?",
-    "burdz i need an adult",
-    "awaiting burdz authorization..."
+    "Sohail, permission required",
+    "Awaiting your approval",
+    "Permission needed to proceed",
+    "Approval required, Sohail",
+    "Waiting for authorization"
   ];
 
   return {
     event: async ({ event }) => {
       if (event.type === "session.idle") {
         const msg = messages[Math.floor(Math.random() * messages.length)];
-        await notify("metaburdz", msg);
+        await notify("OpenCode", msg);
       }
       if (event.type === "permission.updated") {
         const msg = permissionMessages[Math.floor(Math.random() * permissionMessages.length)];
-        await notify("metaburdz", msg, "critical");
+        await notify("OpenCode", msg, "critical");
       }
     }
   };
