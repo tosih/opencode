@@ -90,6 +90,7 @@ The following external tools are available:
 - **memory**: Persistent knowledge graph for cross-session context
 - **sequential-thinking**: Structured multi-step reasoning for complex problems
 - **exa**: Web search with AI-powered results
+- **atlassian**: Jira, Confluence and Compass integration (OAuth 2.1)
 
 ## Agent Deployment Strategy
 

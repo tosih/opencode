@@ -77,6 +77,12 @@
         "mcp/sequentialthinking"
       ],
       "enabled": true
+    },
+    "atlassian": {
+      "type": "remote",
+      "url": "https://mcp.atlassian.com/v1/mcp",
+      "enabled": true,
+      "oauth": {}
     }
   },
   "default_agent": "metasohail",
