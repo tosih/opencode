@@ -18,10 +18,9 @@ Use these specialized agents by mentioning them with `@`:
 |-------|---------|-------|
 | `@explore` | Fast codebase search - find files, patterns, structures (contextual grep) | Claude Haiku 4.5 |
 | `@librarian` | External research - official docs (Context7), GitHub code (grep.app), web search (Exa) | Claude Sonnet 4.5 |
-| `@principal` | Principal engineering advisor - complex architecture, hard debugging, design review | Claude Opus 4.5 |
-| `@frontend` | UI/UX implementation - clean, modern design, Nuxt.js, Vercel-style aesthetics | Gemini 3 Pro |
+
+| `@frontend` | UI/UX implementation - clean, modern design, Nuxt.js, Vercel-style aesthetics | Claude Sonnet 4.5 |
 | `@tui` | TUI/CLI design - terminal interfaces with Charm (Bubble Tea, Lip Gloss, Huh), Vercel/OpenCode aesthetics, k9s-inspired UX patterns | Claude Sonnet 4.5 |
-| `@docs` | Technical writing - README, API docs, architecture docs, guides | Gemini 3 Pro |
 | `@multimodal` | Media analysis - PDFs, images, diagrams, screenshots | Claude Sonnet 4.5 |
 | `@quick` | Fast execution - simple tasks, file moves, grep-and-replace, boilerplate | Claude Haiku 4.5 |
 
@@ -39,7 +38,6 @@ Use these specialized agents by mentioning them with `@`:
 | `@k8s` | Kubernetes platform engineer - operators, CRDs, Helm, GKE/EKS, controller-runtime | Claude Sonnet 4.5 |
 | `@homelab` | Homelab Kubernetes specialist - Talos Linux, Flux GitOps, makejinja templates, Rook-Ceph, Cilium Gateway API. SAFETY FIRST: requires approval for destructive operations, incremental changes only | Claude Sonnet 4.5 |
 | `@sre` | Site Reliability Engineer - SLOs, error budgets, incidents, observability, capacity | Claude Opus 4.5 |
-| `@terraform` | IaC expert - Terraform modules, state management, AWS/GCP, GitOps | Claude Sonnet 4.5 |
 | `@linux` | Linux/Bash/Git wizard - shell scripts, systemd, Docker, advanced Git (bisect, rebase, reflog) | Claude Sonnet 4.5 |
 | `@cicd` | CI/CD engineer - GitHub Actions, GitLab CI, ArgoCD, Tekton, Codefresh | Claude Sonnet 4.5 |
 
@@ -48,26 +46,23 @@ Use these specialized agents by mentioning them with `@`:
 | Agent | Purpose | Model |
 |-------|---------|-------|
 | `@postgres` | PostgreSQL wizard - schema design, query optimization, migrations, pgx/sqlc | Claude Sonnet 4.5 |
-| `@perf` | Performance engineer - pprof, benchstat, flame graphs, Linux perf tools | Claude Sonnet 4.5 |
 
 ### Security & Quality
 
 | Agent | Purpose | Model |
 |-------|---------|-------|
 | `@security` | AppSec/DFIR - OWASP Top 10, threat modeling, vulnerability analysis, forensics | Claude Opus 4.5 |
-| `@testing` | Test strategy - table-driven tests, mockery, Kubernetes controller testing | Claude Sonnet 4.5 |
-| `@architect` | Software Architect - system design, distributed systems, API design, ADRs | Claude Opus 4.5 |
 
 ## Available Commands
 
 | Command | Description | Agents Used |
 |---------|-------------|-------------|
-| `/ultrawork <task>` | Maximum performance mode - parallel agent swarms, systematic TODO tracking | `explore`, `librarian`, `go`, `typescript`, `frontend`, `tui`, `k8s`, `terraform`, `cicd`, `postgres`, `linux`, `perf`, `sre`, `security`, `architect`, `principal`, `docs`, `testing` |
+| `/ultrawork <task>` | Maximum performance mode - parallel agent swarms, systematic TODO tracking | `explore`, `librarian`, `go`, `typescript`, `frontend`, `tui`, `k8s`, `cicd`, `postgres`, `linux`, `sre`, `security` |
 | `/search <query>` | Deep search across codebase (explore swarm) and external sources (librarian) | `explore`, `librarian` |
-| `/analyze <topic>` | Multi-phase deep analysis with expert consultation | `explore`, `librarian`, `architect`, `security`, `sre`, `perf`, `principal` |
+| `/analyze <topic>` | Multi-phase deep analysis with expert consultation | `explore`, `librarian`, `security`, `sre` |
 | `/think <problem>` | Extended reasoning mode for complex problems | `explore`, `librarian` |
-| `/review <code>` | Comprehensive code review with security, performance, and maintainability focus | `explore`, `principal`, `security`, `sre`, `perf`, `architect`, `testing` |
-| `/implement <task>` | End-to-end feature implementation with parallel agent orchestration | `explore`, `librarian`, `architect`, `principal`, `go`, `typescript`, `postgres`, `frontend`, `tui`, `k8s`, `terraform`, `cicd`, `linux`, `testing`, `security`, `sre`, `perf` |
+| `/review <code>` | Comprehensive code review with security, performance and maintainability focus | `explore`, `security`, `sre` |
+| `/implement <task>` | End-to-end feature implementation with parallel agent orchestration | `explore`, `librarian`, `go`, `typescript`, `postgres`, `frontend`, `tui`, `k8s`, `cicd`, `linux`, `security`, `sre` |
 
 ## Plugins
 
@@ -90,7 +85,6 @@ The following external tools are available:
 - **memory**: Persistent knowledge graph for cross-session context
 - **sequential-thinking**: Structured multi-step reasoning for complex problems
 - **exa**: Web search with AI-powered results
-- **atlassian**: Jira, Confluence and Compass integration (OAuth 2.1)
 
 ## Agent Deployment Strategy
 
@@ -101,7 +95,7 @@ The following external tools are available:
 | **Free** | Direct tools (`glob`, `grep`, `lsp_*`, `ast_grep`) | Free | Known scope, single patterns |
 | **Cheap** | `@explore`, `@quick` | Low | Codebase search, simple tasks |
 | **Medium** | `@librarian`, `@typescript`, `@go`, `@frontend`, etc. | Medium | Research, implementation |
-| **Expensive** | `@principal`, `@security`, `@sre`, `@architect` | High | Architecture, security, hard debugging |
+| **Expensive** | `@metasohail`, `@security`, `@sre` | High | Orchestration, security, reliability engineering |
 
 ### Background vs Foreground
 
@@ -109,7 +103,7 @@ The following external tools are available:
 |------------|--------|---------|
 | **Background swarm** | `@explore`, `@librarian` | Fire 2-3 in parallel, collect results later |
 | **Foreground delegation** | Domain specialists | Sequential or parallel based on dependencies |
-| **Escalation only** | `@principal` | After 2+ failures or for architecture decisions |
+| **Escalation only** | `@metasohail` | After 2+ failures or for complex debugging |
 
 ### Example Swarm Pattern
 
@@ -140,10 +134,9 @@ background_cancel(all=true)
 2. **Use `@explore` for internal search** - it's contextual grep for your codebase
 3. **Use `@librarian` for external research** - docs, GitHub examples, best practices
 4. **Use `@metasohail` for debugging** - orchestrates the right specialists
-5. **Use `@principal` sparingly** - expensive but high-quality for hard problems
-6. **Fire explore/librarian in parallel** - they're cheap and fast
-7. **Complete all TODOs** - never stop until the task is fully done
-8. **Verify before completing** - `lsp_diagnostics`, tests, build
+5. **Fire explore/librarian in parallel** - they're cheap and fast
+6. **Complete all TODOs** - never stop until the task is fully done
+7. **Verify before completing** - `lsp_diagnostics`, tests, build
 
 ## Code Standards
 
@@ -165,19 +158,13 @@ background_cancel(all=true)
 | Find examples in OSS | `@librarian` |
 | Write Go code | `@go` |
 | Write TypeScript code | `@typescript` |
-| Design a system | `@architect` |
-| Review architecture | `@principal` |
 | Kubernetes manifests | `@k8s` |
-| Terraform modules | `@terraform` |
 | CI/CD workflows | `@cicd` |
 | Database schema | `@postgres` |
 | Security review | `@security` |
-| Performance analysis | `@perf` |
 | SLO/SLI design | `@sre` |
-| Test strategy | `@testing` |
 | UI/UX styling | `@frontend` |
 | TUI/CLI interfaces | `@tui` |
-| Documentation | `@docs` |
 | Shell scripts | `@linux` |
 | Simple refactors | `@quick` |
 | Analyze images/PDFs | `@multimodal` |

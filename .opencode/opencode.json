@@ -1,12 +1,13 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "github-copilot/claude-sonnet-4.5",
-  "small_model": "github-copilot/claude-haiku-4.5",
+  "model": "claude-sonnet-4.5",
+  "small_model": "claude-haiku-4.5",
   "theme": "opencode",
   "autoupdate": false,
   "share": "manual",
   "plugin": [
-    "@tarquinen/opencode-dcp"
+    "@tarquinen/opencode-dcp",
+    "opencode-anthropic-auth@latest"
   ],
   "mcp": {
     "github": {
@@ -77,12 +78,6 @@
         "mcp/sequentialthinking"
       ],
       "enabled": true
-    },
-    "atlassian": {
-      "type": "remote",
-      "url": "https://mcp.atlassian.com/v1/mcp",
-      "enabled": true,
-      "oauth": {}
     }
   },
   "default_agent": "metasohail",
@@ -92,8 +87,6 @@
     "webfetch": "allow"
   },
   "instructions": [
-    "AGENTS.md",
-    "CONTRIBUTING.md",
-    "docs/*.md"
+    "AGENTS.md"
   ]
 }

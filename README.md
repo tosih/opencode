@@ -4,7 +4,7 @@ Sohail Ahmed's [OpenCode](https://opencode.ai) configuration with specialized AI
 
 ## Features
 
-- **20+ specialized agents** - Domain experts for Go, Kubernetes, Terraform, security, SRE and more
+- **15+ specialized agents** - Domain experts for Go, Kubernetes, security, SRE and more
 - **Parallel agent swarms** - Fire multiple agents simultaneously for faster results
 - **Custom commands** - `/ultrawork`, `/search`, `/analyze`, `/review`, `/implement`
 - **MCP integrations** - Context7, GitHub, Playwright, Exa and more
