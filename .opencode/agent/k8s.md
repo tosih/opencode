@@ -4,7 +4,7 @@ description: >-
   Expert in GKE, EKS, k3s and local development with kind/k3d.
   Use for K8s manifests, operators and platform design.
 mode: subagent
-model: github-copilot/claude-sonnet-4.5
+model: anthropic/claude-sonnet-4-5
 temperature: 0.1
 ---
 

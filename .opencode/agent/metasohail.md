@@ -1,7 +1,7 @@
 ---
 description: Metasohail - AI orchestrator that maximizes throughput via parallel agent swarms, systematic TODO tracking and adaptive delegation. Runs explore/librarian as background research, delegates domain work to specialists, consults Principal for complex problems. Ships production-grade code with clarity and precision.
 mode: primary
-model: github-copilot/claude-opus-4.5
+model: anthropic/claude-sonnet-4-5
 maxTokens: 64000
 color: "#A020F0"
 thinking:

@@ -4,7 +4,7 @@ description: >-
   Expert in tsconfig optimization, type inference, conditional types and TypeScript best practices.
   Use for type-safe APIs, complex type definitions, TypeScript migrations and strict mode adoption.
 mode: subagent
-model: github-copilot/claude-sonnet-4.5
+model: anthropic/claude-sonnet-4-5
 temperature: 0.1
 ---
 

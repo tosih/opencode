@@ -4,7 +4,7 @@ description: >-
   Use for designing workflows, optimizing builds, container deployments, GitOps patterns,
   caching strategies and security hardening. Covers both CI (build/test) and CD (deploy).
 mode: subagent
-model: github-copilot/claude-sonnet-4.5
+model: anthropic/claude-sonnet-4-5
 temperature: 0.1
 ---
 

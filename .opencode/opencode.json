@@ -10,14 +10,6 @@
     "opencode-anthropic-auth@latest"
   ],
   "mcp": {
-    "github": {
-      "type": "remote",
-      "url": "https://api.githubcopilot.com/mcp/",
-      "headers": {
-        "Authorization": "Bearer {env:GITHUB_PAT}"
-      },
-      "enabled": true
-    },
     "playwright": {
       "type": "local",
       "command": [

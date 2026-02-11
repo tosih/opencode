@@ -4,7 +4,7 @@ description: >-
   Expert in distributed systems, Prometheus, Grafana, OpenTelemetry and production operations.
   Use for reliability reviews, incident analysis, metrics design, alerting and platform design.
 mode: subagent
-model: github-copilot/claude-opus-4.5
+model: anthropic/claude-opus-4
 temperature: 0.2
 thinking:
   type: enabled

@@ -5,7 +5,7 @@ description: >-
   Expert in keyboard-driven navigation, command palettes, real-time updates and polished interactions.
   Use for terminal UI design, CLI applications and interactive console tools.
 mode: subagent
-model: github-copilot/claude-sonnet-4.5
+model: anthropic/claude-sonnet-4-5
 temperature: 0.5
 tools:
   background_task: false

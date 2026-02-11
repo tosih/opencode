@@ -1,7 +1,7 @@
 ---
 description: 'Elite external research specialist. Searches official docs (Context7), GitHub code (grep_app) and web (Exa). Clones repos for deep analysis. Returns evidence with permalinks. MUST BE USED for library questions, OSS examples, best practices and external API documentation.'
 mode: subagent
-model: github-copilot/claude-sonnet-4.5
+model: anthropic/claude-sonnet-4-5
 temperature: 0.1
 tools:
   write: false

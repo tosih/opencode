@@ -4,7 +4,7 @@ description: >-
   Expert in cloud security, container security, and DFIR.
   Use for security reviews, threat modeling, and vulnerability analysis.
 mode: subagent
-model: github-copilot/claude-opus-4.5
+model: anthropic/claude-opus-4
 temperature: 0.2
 thinking:
   type: enabled

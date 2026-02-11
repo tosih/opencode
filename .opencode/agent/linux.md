@@ -4,7 +4,7 @@ description: >-
   scripting, Dockerfiles, system debugging, advanced Git operations (rebase, bisect,
   reflog recovery) and system automation.
 mode: subagent
-model: github-copilot/claude-sonnet-4.5
+model: anthropic/claude-sonnet-4-5
 temperature: 0.1
 ---
 

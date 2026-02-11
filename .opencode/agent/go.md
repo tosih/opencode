@@ -4,7 +4,7 @@ description: >-
   Specialized in modern Go idioms (generics, iterators), production systems,
   APIs, CLIs and Kubernetes operators. Prioritizes simplicity and correctness.
 mode: subagent
-model: github-copilot/claude-sonnet-4.5
+model: anthropic/claude-sonnet-4-5
 temperature: 0.1
 ---
 

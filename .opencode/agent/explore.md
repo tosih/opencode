@@ -1,7 +1,7 @@
 ---
 description: 'Elite codebase search specialist. Contextual grep that finds code patterns, structures and implementations. Deploys parallel search swarms with glob/grep/LSP/ast_grep. Returns absolute paths with line numbers. Fire 2-3 instances with different angles for comprehensive coverage.'
 mode: subagent
-model: github-copilot/claude-haiku-4.5
+model: anthropic/claude-haiku-4-5
 temperature: 0.1
 tools:
   write: false

@@ -4,7 +4,7 @@ description: >-
   migrations, performance tuning and operational best practices.
   Specialized in Go database integration with pgx and sqlc.
 mode: subagent
-model: github-copilot/claude-sonnet-4.5
+model: anthropic/claude-sonnet-4-5
 temperature: 0.1
 ---
 
