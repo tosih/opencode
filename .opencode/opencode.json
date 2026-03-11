@@ -83,6 +83,15 @@
       "url": "https://mcp.atlassian.com/v1/mcp",
       "enabled": true,
       "oauth": {}
+    },
+    "google-drive": {
+      "type": "local",
+      "command": [
+        "sh",
+        "-c",
+        "GOOGLE_DRIVE_OAUTH_CREDENTIALS=$HOME/.config/google-drive-mcp/gcp-oauth.keys.json npx @piotr-agier/google-drive-mcp"
+      ],
+      "enabled": true
     }
   },
   "default_agent": "metasohail",

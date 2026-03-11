@@ -145,6 +145,15 @@ background_cancel(all=true)
 7. **Complete all TODOs** - never stop until the task is fully done
 8. **Verify before completing** - `lsp_diagnostics`, tests, build
 
+## GitHub Conventions
+
+When creating branches, repositories or PRs:
+
+- **Branch names**: Use descriptive names with hyphens like `feat-add-auth`, `fix-login-bug`, `chore-update-deps`
+- **Avoid forward slashes** in branch names (some repos have restrictions)
+- **NEVER include usernames in branch names** - no `sohail/feature`, no `sohailahmed-fix`, no user prefixes
+- **PR titles**: Use conventional commits format (`feat:`, `fix:`, `chore:`, `docs:`, etc.)
+
 ## Code Standards
 
 - Follow existing project conventions
