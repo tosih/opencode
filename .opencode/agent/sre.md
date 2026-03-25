@@ -4,11 +4,11 @@ description: >-
   Expert in distributed systems, Prometheus, Grafana, OpenTelemetry and production operations.
   Use for reliability reviews, incident analysis, metrics design, alerting and platform design.
 mode: subagent
-model: anthropic/claude-opus-4
+model: anthropic/claude-sonnet-4-5
 temperature: 0.2
 thinking:
   type: enabled
-  budgetTokens: 32000
+  budgetTokens: 8000
 permission:
   bash: ask
 ---

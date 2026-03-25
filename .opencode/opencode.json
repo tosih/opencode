@@ -78,7 +78,5 @@
     "bash": "allow",
     "webfetch": "allow"
   },
-  "instructions": [
-    "AGENTS.md"
-  ]
+  "instructions": []
 }
