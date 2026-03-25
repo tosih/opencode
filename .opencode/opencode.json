@@ -1,13 +1,12 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "claude-sonnet-4.5",
-  "small_model": "claude-haiku-4.5",
-  "theme": "opencode",
+  "model": "anthropic/claude-sonnet-4-6",
+  "small_model": "anthropic/claude-haiku-4-5",
   "autoupdate": false,
   "share": "manual",
   "plugin": [
     "@tarquinen/opencode-dcp",
-    "opencode-anthropic-auth@latest"
+    "opencode-claude-auth"
   ],
   "mcp": {
     "playwright": {
