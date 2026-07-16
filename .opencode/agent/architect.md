@@ -4,7 +4,7 @@ description: >-
   Expert in microservices, event-driven architecture, API design and cloud-native patterns.
   Use for architecture reviews, design decisions and technical roadmaps.
 mode: subagent
-model: github-copilot/claude-opus-4.5
+model: amazon-bedrock/us.anthropic.claude-opus-4-7
 temperature: 0.3
 thinking:
   type: enabled

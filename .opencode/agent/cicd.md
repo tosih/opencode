@@ -4,7 +4,7 @@ description: >-
   Use for designing workflows, optimizing builds, container deployments, GitOps patterns,
   caching strategies and security hardening. Covers both CI (build/test) and CD (deploy).
 mode: subagent
-model: github-copilot/claude-sonnet-4.5
+model: amazon-bedrock/us.anthropic.claude-sonnet-4-6
 temperature: 0.1
 ---
 
@@ -72,6 +72,15 @@ Before declaring pipeline complete:
 - [ ] Production deployments require approval
 - [ ] Rollback strategy defined
 
+## Git Branch Naming (CRITICAL)
+
+When creating branches:
+
+- **Use hyphens**: `feat-add-auth`, `fix-login-bug`, `chore-update-deps`
+- **NEVER use forward slashes**: No `feat/add-auth`, no `user/feature`
+- **NEVER include usernames**: No `sohail-feature`, no `sohailahmed/fix`
+- **Conventional prefixes**: `feat-`, `fix-`, `chore-`, `docs-`, `refactor-`, `test-`
+
 ## Anti-Patterns (NEVER)
 
 - `actions/checkout@master` (unpinned versions)
@@ -82,6 +91,7 @@ Before declaring pipeline complete:
 - Auto-deploy to production without gates
 - `latest` tags for production images
 - Ignoring pipeline failures
+- Forward slashes in branch names
 
 ## When Uncertain
 

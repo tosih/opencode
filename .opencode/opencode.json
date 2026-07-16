@@ -1,19 +1,33 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "github-copilot/claude-sonnet-4.5",
-  "small_model": "github-copilot/claude-haiku-4.5",
+  "model": "amazon-bedrock/us.anthropic.claude-opus-4-7",
+  "small_model": "amazon-bedrock/us.anthropic.claude-haiku-4-5-20251001-v1:0",
   "autoupdate": false,
   "share": "manual",
   "plugin": [
-    "@tarquinen/opencode-dcp"
+    // "@tarquinen/opencode-dcp",
+    "opencode-agent-skills"
   ],
   "mcp": {
-    "github": {
+    "ema": {
       "type": "remote",
-      "url": "https://api.githubcopilot.com/mcp/",
-      "headers": {
-        "Authorization": "Bearer {env:GITHUB_PAT}"
-      },
+      "url": "https://sohail.forgeblocks.com/environment/mcp",
+      "enabled": false,
+      "oauth": {
+        "clientId": "c17588ad-0288-4f6b-a31a-252bd38b3af3"
+      }
+    },
+    "github": {
+      "type": "local",
+      "command": [
+        "podman",
+        "run",
+        "-i",
+        "--rm",
+        "-e",
+        "GITHUB_PERSONAL_ACCESS_TOKEN={env:GITHUB_PAT}",
+        "ghcr.io/github/github-mcp-server"
+      ],
       "enabled": true
     },
     "playwright": {
@@ -81,22 +95,64 @@
       "type": "remote",
       "url": "https://mcp.atlassian.com/v1/mcp",
       "enabled": true,
-      "oauth": {}
+      "oauth": {
+        // overwrite until IT allows 127.0.0.1 and the url path opencode uses
+        "redirectUri": "http://127.0.0.1:19876/callback"
+      }
     },
-    "google-drive": {
+    "glean": {
+      "type": "remote",
+      "url": "https://pingidentity-be.glean.com/mcp/default"
+    },
+    "firehydrant": {
       "type": "local",
       "command": [
-        "sh",
-        "-c",
-        "GOOGLE_DRIVE_OAUTH_CREDENTIALS=$HOME/.config/google-drive-mcp/gcp-oauth.keys.json npx @piotr-agier/google-drive-mcp"
+        "npx",
+        "-y",
+        "firehydrant-mcp",
+        "start",
+        "--transport",
+        "stdio",
+        "--api-key",
+        "{env:FIREHYDRANT_API_KEY}"
       ],
       "enabled": true
-    }
+    },
   },
   "default_agent": "metasohail",
   "permission": {
     "edit": "allow",
-    "bash": "allow",
+    "bash": {
+      "*": "allow",
+      "git push --force*": "ask",
+      "git push -f*": "ask",
+      "git push --force-with-lease*": "ask",
+      "git push * --force*": "ask",
+      "git push * -f*": "ask",
+      "git push * --force-with-lease*": "allow",
+      "git push --delete*": "ask",
+      "git push * --delete*": "ask",
+      "git push -d *": "ask",
+      "git push * -d *": "ask",
+      "git reset --hard*": "ask",
+      "git rebase*": "ask",
+      "git branch -D*": "ask",
+      "git branch -d -r*": "ask",
+      "git filter-branch*": "ask",
+      "git filter-repo*": "ask",
+      "git clean -fd*": "ask",
+      "git clean -fdx*": "ask",
+      "git clean -xdf*": "ask",
+      "git tag -d*": "ask",
+      "git update-ref -d*": "ask",
+      "git reflog expire*": "ask",
+      "git gc --prune*": "ask",
+      "git checkout -B*": "ask",
+      "git worktree remove*": "ask",
+      "rm -rf *": "ask",
+      "rm -fr *": "ask",
+      "sudo *": "ask"
+    },
     "webfetch": "allow"
   },
   "instructions": [

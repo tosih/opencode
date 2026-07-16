@@ -4,7 +4,7 @@ description: >-
   and code review. EXPENSIVE reasoning model - use sparingly. Best for multi-system tradeoffs, unfamiliar 
   patterns, security/performance concerns, post-implementation review and hard debugging after 2+ failures.
 mode: subagent
-model: github-copilot/claude-opus-4.5
+model: amazon-bedrock/us.anthropic.claude-opus-4-7
 temperature: 0.2
 thinking:
   type: enabled

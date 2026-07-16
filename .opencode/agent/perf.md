@@ -4,7 +4,7 @@ description: >-
   flame graphs and Linux perf tools. Use for profiling Go applications, identifying bottlenecks,
   optimizing hot paths and establishing performance baselines. Never optimize without measuring.
 mode: subagent
-model: github-copilot/claude-sonnet-4.5
+model: amazon-bedrock/us.anthropic.claude-sonnet-4-6
 temperature: 0.1
 ---
 

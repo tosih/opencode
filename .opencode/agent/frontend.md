@@ -5,7 +5,7 @@ description: >-
   clean, simple, modern design with attention to spacing, typography and visual hierarchy.
   Use for visual design, component architecture and responsive layouts.
 mode: subagent
-model: github-copilot/gemini-3-pro-preview
+model: amazon-bedrock/us.anthropic.claude-sonnet-4-6
 temperature: 0.5
 tools:
   background_task: false

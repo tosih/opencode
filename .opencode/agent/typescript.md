@@ -4,7 +4,7 @@ description: >-
   Expert in tsconfig optimization, type inference, conditional types and TypeScript best practices.
   Use for type-safe APIs, complex type definitions, TypeScript migrations and strict mode adoption.
 mode: subagent
-model: github-copilot/claude-sonnet-4.5
+model: amazon-bedrock/us.anthropic.claude-sonnet-4-6
 temperature: 0.1
 ---
 
@@ -76,6 +76,14 @@ Before declaring code complete:
 - [ ] Type guards for runtime checks
 - [ ] Utility types used effectively
 
+## Git Branch Naming (CRITICAL)
+
+When creating branches:
+
+- **Use hyphens**: `feat-add-auth`, `fix-login-bug`, `chore-update-deps`
+- **NEVER use forward slashes**: No `feat/add-auth`, no `user/feature`
+- **NEVER include usernames**: No `sohail-feature`, no `sohailahmed/fix`
+
 ## Anti-Patterns (NEVER)
 
 - Using `any` as a quick fix for type errors
@@ -86,6 +94,7 @@ Before declaring code complete:
 - Duplicating types instead of creating shared definitions
 - Using `Function` type (use proper function signatures)
 - Missing return types on exported functions
+- Forward slashes in branch names (use hyphens)
 
 ## TypeScript-Specific Patterns
 

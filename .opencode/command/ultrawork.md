@@ -69,13 +69,14 @@ Deploy agents in parallel waves:
 | External research | `librarian` | Background |
 | Frontend UI | `frontend` | Foreground delegation |
 | Go code | `go` | Foreground delegation |
-| Zig code | `zig` | Foreground delegation |
+| TypeScript | `typescript` | Foreground delegation |
 | Kubernetes | `k8s` | Foreground delegation |
+| Homelab infra | `homelab` | Foreground delegation |
 | Infrastructure | `terraform` | Foreground delegation |
 | CI/CD pipelines | `cicd` | Foreground delegation |
 | Database | `postgres` | Foreground delegation |
 | Shell/Linux | `linux` | Foreground delegation |
-| NixOS config | `nix` | Foreground delegation |
+| TUI/CLI | `tui` | Foreground delegation |
 | Performance | `perf` | For optimization work |
 | Reliability | `sre` | For SLO/observability |
 | Security review | `security` | After implementation |

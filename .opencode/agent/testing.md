@@ -4,7 +4,7 @@ description: >-
   Use for writing table-driven tests, mocking with mockery, testing Kubernetes controllers,
   HTTP handler tests and establishing testing best practices.
 mode: subagent
-model: github-copilot/claude-sonnet-4.5
+model: amazon-bedrock/us.anthropic.claude-sonnet-4-6
 temperature: 0.1
 ---
 

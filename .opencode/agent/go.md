@@ -4,7 +4,7 @@ description: >-
   Specialized in modern Go idioms (generics, iterators), production systems,
   APIs, CLIs and Kubernetes operators. Prioritizes simplicity and correctness.
 mode: subagent
-model: github-copilot/claude-sonnet-4.5
+model: amazon-bedrock/us.anthropic.claude-sonnet-4-6
 temperature: 0.1
 ---
 
@@ -496,6 +496,14 @@ Before declaring code complete:
 - [ ] Context passed through call chains
 - [ ] Graceful shutdown implemented for long-running services
 
+## Git Branch Naming (CRITICAL)
+
+When creating branches:
+
+- **Use hyphens**: `feat-add-auth`, `fix-login-bug`, `chore-update-deps`
+- **NEVER use forward slashes**: No `feat/add-auth`, no `user/feature`
+- **NEVER include usernames**: No `sohail-feature`, no `sohailahmed/fix`
+
 ## Anti-Patterns (NEVER)
 
 | Pattern | Why It's Bad | Instead |
@@ -510,6 +518,7 @@ Before declaring code complete:
 | `reflect` for simple tasks | Slow, not clear | Generics or type switches |
 | Deep nesting (>3 levels) | Hard to read | Early returns, extract functions |
 | Getters with `Get` prefix | Not idiomatic | `user.Name()` not `user.GetName()` |
+| Forward slashes in branch names | Repo restrictions | Use hyphens instead |
 
 ## Specializations
 

@@ -16,58 +16,60 @@ Use these specialized agents by mentioning them with `@`:
 
 | Agent | Purpose | Model |
 |-------|---------|-------|
-| `@explore` | Fast codebase search - find files, patterns, structures (contextual grep) | Claude Haiku 4.5 |
-| `@librarian` | External research - official docs (Context7), GitHub code (grep.app), web search (Exa) | Claude Sonnet 4.5 |
+| `@explore` | Fast codebase search - find files, patterns, structures (contextual grep) | Claude Haiku 4 |
+| `@librarian` | External research - official docs (Context7), GitHub code (grep.app), web search (Exa) | Claude Sonnet 4 |
 | `@principal` | Principal engineering advisor - complex architecture, hard debugging, design review | Claude Opus 4.5 |
 | `@frontend` | UI/UX implementation - clean, modern design, Nuxt.js, Vercel-style aesthetics | Gemini 3 Pro |
-| `@tui` | TUI/CLI design - terminal interfaces with Charm (Bubble Tea, Lip Gloss, Huh), Vercel/OpenCode aesthetics, k9s-inspired UX patterns | Claude Sonnet 4.5 |
+| `@tui` | TUI/CLI design - terminal interfaces with Charm (Bubble Tea, Lip Gloss, Huh), Vercel/OpenCode aesthetics, k9s-inspired UX patterns | Claude Sonnet 4 |
 | `@docs` | Technical writing - README, API docs, architecture docs, guides | Gemini 3 Pro |
-| `@multimodal` | Media analysis - PDFs, images, diagrams, screenshots | Claude Sonnet 4.5 |
-| `@quick` | Fast execution - simple tasks, file moves, grep-and-replace, boilerplate | Claude Haiku 4.5 |
+| `@multimodal` | Media analysis - PDFs, images, diagrams, screenshots | Claude Sonnet 4 |
+| `@quick` | Fast execution - simple tasks, file moves, grep-and-replace, boilerplate | Claude Haiku 4 |
 
 ### Language Specialists
 
 | Agent | Purpose | Model |
 |-------|---------|-------|
-| `@go` | Go engineer - net/http, Cobra, sqlc, gRPC, controller-runtime, table-driven tests | Claude Sonnet 4.5 |
-| `@typescript` | TypeScript engineer - type-safe development, generics, strict mode, tsconfig | Claude Sonnet 4.5 |
+| `@go` | Go engineer - net/http, Cobra, sqlc, gRPC, controller-runtime, table-driven tests | Claude Sonnet 4 |
+| `@typescript` | TypeScript engineer - type-safe development, generics, strict mode, tsconfig | Claude Sonnet 4 |
 
 ### Infrastructure & Platform
 
 | Agent | Purpose | Model |
 |-------|---------|-------|
-| `@k8s` | Kubernetes platform engineer - operators, CRDs, Helm, GKE/EKS, controller-runtime | Claude Sonnet 4.5 |
-| `@homelab` | Homelab Kubernetes specialist - Talos Linux, Flux GitOps, makejinja templates, Rook-Ceph, Cilium Gateway API. SAFETY FIRST: requires approval for destructive operations, incremental changes only | Claude Sonnet 4.5 |
+| `@k8s` | Kubernetes platform engineer - operators, CRDs, Helm, GKE/EKS, controller-runtime | Claude Sonnet 4 |
+| `@homelab` | Homelab Kubernetes specialist - Talos Linux, Flux GitOps, makejinja templates, Rook-Ceph, Cilium Gateway API. SAFETY FIRST: requires approval for destructive operations, incremental changes only | Claude Sonnet 4 |
 | `@sre` | Site Reliability Engineer - SLOs, error budgets, incidents, observability, capacity | Claude Opus 4.5 |
-| `@terraform` | IaC expert - Terraform modules, state management, AWS/GCP, GitOps | Claude Sonnet 4.5 |
-| `@linux` | Linux/Bash/Git wizard - shell scripts, systemd, Docker, advanced Git (bisect, rebase, reflog) | Claude Sonnet 4.5 |
-| `@cicd` | CI/CD engineer - GitHub Actions, GitLab CI, ArgoCD, Tekton, Codefresh | Claude Sonnet 4.5 |
+| `@terraform` | IaC expert - Terraform modules, state management, AWS/GCP, GitOps | Claude Sonnet 4 |
+| `@linux` | Linux/Bash/Git wizard - shell scripts, systemd, Docker, advanced Git (bisect, rebase, reflog) | Claude Haiku 4.5 |
+| `@cicd` | CI/CD engineer - GitHub Actions, GitLab CI, ArgoCD, Tekton, Codefresh | Claude Sonnet 4 |
 
 ### Database & Performance
 
 | Agent | Purpose | Model |
 |-------|---------|-------|
-| `@postgres` | PostgreSQL wizard - schema design, query optimization, migrations, pgx/sqlc | Claude Sonnet 4.5 |
-| `@perf` | Performance engineer - pprof, benchstat, flame graphs, Linux perf tools | Claude Sonnet 4.5 |
+| `@postgres` | PostgreSQL wizard - schema design, query optimization, migrations, pgx/sqlc | Claude Sonnet 4 |
+| `@perf` | Performance engineer - pprof, benchstat, flame graphs, Linux perf tools | Claude Sonnet 4 |
 
 ### Security & Quality
 
 | Agent | Purpose | Model |
 |-------|---------|-------|
 | `@security` | AppSec/DFIR - OWASP Top 10, threat modeling, vulnerability analysis, forensics | Claude Opus 4.5 |
-| `@testing` | Test strategy - table-driven tests, mockery, Kubernetes controller testing | Claude Sonnet 4.5 |
+| `@testing` | Test strategy - table-driven tests, mockery, Kubernetes controller testing | Claude Sonnet 4 |
 | `@architect` | Software Architect - system design, distributed systems, API design, ADRs | Claude Opus 4.5 |
 
 ## Available Commands
 
 | Command | Description | Agents Used |
 |---------|-------------|-------------|
-| `/ultrawork <task>` | Maximum performance mode - parallel agent swarms, systematic TODO tracking | `explore`, `librarian`, `go`, `typescript`, `frontend`, `tui`, `k8s`, `terraform`, `cicd`, `postgres`, `linux`, `perf`, `sre`, `security`, `architect`, `principal`, `docs`, `testing` |
+| `/ultrawork <task>` | Maximum performance mode - parallel agent swarms, systematic TODO tracking | `explore`, `librarian`, `go`, `typescript`, `frontend`, `tui`, `k8s`, `homelab`, `terraform`, `cicd`, `postgres`, `linux`, `perf`, `sre`, `security`, `architect`, `principal`, `docs`, `testing` |
 | `/search <query>` | Deep search across codebase (explore swarm) and external sources (librarian) | `explore`, `librarian` |
 | `/analyze <topic>` | Multi-phase deep analysis with expert consultation | `explore`, `librarian`, `architect`, `security`, `sre`, `perf`, `principal` |
 | `/think <problem>` | Extended reasoning mode for complex problems | `explore`, `librarian` |
 | `/review <code>` | Comprehensive code review with security, performance, and maintainability focus | `explore`, `principal`, `security`, `sre`, `perf`, `architect`, `testing` |
-| `/implement <task>` | End-to-end feature implementation with parallel agent orchestration | `explore`, `librarian`, `architect`, `principal`, `go`, `typescript`, `postgres`, `frontend`, `tui`, `k8s`, `terraform`, `cicd`, `linux`, `testing`, `security`, `sre`, `perf` |
+| `/implement <task>` | End-to-end feature implementation with parallel agent orchestration | `explore`, `librarian`, `architect`, `principal`, `go`, `typescript`, `postgres`, `frontend`, `tui`, `k8s`, `homelab`, `terraform`, `cicd`, `linux`, `testing`, `security`, `sre`, `perf` |
+| `/debug <issue>` | Systematic debugging with root cause analysis and hypothesis testing | `explore`, `principal`, `security`, `perf`, `postgres`, `sre`, `k8s` |
+| `/refactor <target>` | Safe, systematic refactoring with behavior preservation and verification | `explore`, `architect`, `typescript`, `go`, `postgres`, `principal`, `testing` |
 
 ## Plugins
 
@@ -77,6 +79,7 @@ Use these specialized agents by mentioning them with `@`:
 | `comment-checker` | Warns when code files have excessive comments (>30%) |
 | `env-protection` | Blocks reading sensitive files (.env, credentials, secrets, .bash_history) |
 | `notify` | Desktop notifications when session is idle or permission is needed |
+| `auto-format` | Automatically formats files after write/edit using appropriate formatters (gofmt, prettier) |
 
 ## MCP Tools
 
@@ -91,6 +94,7 @@ The following external tools are available:
 - **sequential-thinking**: Structured multi-step reasoning for complex problems
 - **exa**: Web search with AI-powered results
 - **atlassian**: Jira, Confluence and Compass integration (OAuth 2.1)
+- **google-drive**: Google Drive, Docs, Sheets, Slides and Calendar integration
 
 ## Agent Deployment Strategy
 

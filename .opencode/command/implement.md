@@ -58,15 +58,15 @@ Deploy domain specialists in parallel where independent:
 ├─────────────────────────────────────────────────────────────┤
 │  BACKEND                     │  FRONTEND                    │
 │  ├─ @go (Go APIs/CLIs)       │  ├─ @frontend (UI)           │
-│  ├─ @zig (Zig systems code)  │  └─ (styling, layout)        │
+│  ├─ @typescript (TS code)    │  └─ @tui (TUI/CLI)           │
 │  ├─ @postgres (schema)       │                              │
 │  └─ @linux (shell scripts)   │                              │
 ├──────────────────────────────┼──────────────────────────────┤
 │  INFRASTRUCTURE              │  QUALITY                     │
 │  ├─ @k8s (manifests)         │  ├─ @testing (test strategy) │
-│  ├─ @terraform (IaC)         │  ├─ @security (security)     │
-│  ├─ @cicd (pipelines)        │  ├─ @perf (performance)      │
-│  └─ @nix (Nix configs)       │  └─ @sre (reliability)       │
+│  ├─ @homelab (homelab)       │  ├─ @security (security)     │
+│  ├─ @terraform (IaC)         │  ├─ @perf (performance)      │
+│  └─ @cicd (pipelines)        │  └─ @sre (reliability)       │
 └─────────────────────────────────────────────────────────────┘
 ```
 

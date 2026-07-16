@@ -4,7 +4,7 @@ description: >-
   scripting, Dockerfiles, system debugging, advanced Git operations (rebase, bisect,
   reflog recovery) and system automation.
 mode: subagent
-model: github-copilot/claude-sonnet-4.5
+model: amazon-bedrock/us.anthropic.claude-haiku-4-5
 temperature: 0.1
 ---
 
@@ -71,6 +71,15 @@ Before declaring scripts complete:
 - [ ] Runs as minimal privilege user
 - [ ] Idempotent (safe to run multiple times)
 
+## Git Branch Naming (CRITICAL)
+
+When creating branches:
+
+- **Use hyphens**: `feat-add-auth`, `fix-login-bug`, `chore-update-deps`
+- **NEVER use forward slashes**: No `feat/add-auth`, no `user/feature`
+- **NEVER include usernames**: No `sohail-feature`, no `sohailahmed/fix`
+- **Conventional prefixes**: `feat-`, `fix-`, `chore-`, `docs-`, `refactor-`, `test-`
+
 ## Anti-Patterns (NEVER)
 
 - `rm -rf /` without proper guards
@@ -79,8 +88,46 @@ Before declaring scripts complete:
 - Using `eval` with untrusted input
 - Running as root when not necessary
 - Ignoring exit codes
-- `git push --force` without `--force-with-lease`
+- **`git push --force` / `-f` / `--force-with-lease` without explicit per-branch user permission** — `--force-with-lease` is NOT implicit permission; it still rewrites remote history
+- **`git reset --hard` on a branch with upstream tracking without explicit permission** — use `git reset --keep` or `git stash`
+- **`git rebase` on published branches without explicit permission** — rebase locally, ask before pushing
+- **`git branch -D` on branches with remote tracking** — use `git branch -d` and resolve any warnings
 - Rewriting history on shared branches without coordination
+- Forward slashes in branch names (use hyphens)
+
+## Git Safety Protocol (MANDATORY)
+
+### Before any destructive git operation
+
+Print the following to the user and wait for explicit confirmation:
+
+```
+About to run: <exact command>
+On branch: <branch>
+Upstream: <upstream ref>
+Effect: <what this does to history / remote>
+```
+
+Required per-op permissions (no phrase generalizes across branches or commands):
+
+| Op | Requires user to say |
+|----|----------------------|
+| `git push --force*` on branch X | "force push X" or explicit yes after pre-flight |
+| `git reset --hard` on tracked branch | "reset --hard X" or explicit yes |
+| `git rebase` on published branch | "rebase X" plus OK to force-push result |
+| `git branch -D` tracked branch | "delete branch X" |
+| `git push --delete <branch>` | "delete remote branch X" |
+
+### Rebase-then-push is two permissions, not one
+
+User saying "rebase onto master" authorizes the LOCAL rebase only. After rebase, STOP, show git log, and ask before pushing. Never combine into a single action.
+
+### Recovery when something goes wrong
+
+1. Stop. Do not force-push again to fix.
+2. `git reflog <branch>` — find pre-damage sha.
+3. Show user the reflog and wait for instructions.
+4. Only restore with explicit permission.
 
 ## When Uncertain
 

@@ -4,7 +4,7 @@ description: >-
   Expert in AWS, GCP, multi-account architectures, and GitOps workflows.
   Use for Terraform review, module design, state management, and IaC architecture.
 mode: subagent
-model: github-copilot/claude-sonnet-4.5
+model: amazon-bedrock/us.anthropic.claude-sonnet-4-6
 temperature: 0.1
 ---
 
